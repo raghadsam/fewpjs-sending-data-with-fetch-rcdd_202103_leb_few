@@ -1,7 +1,11 @@
 // Add your code here
 let body=document.getElementById("body");
 let message = 'Unauthorized Access';
+<<<<<<< HEAD
 let rando
+=======
+let rando = Math.ceil( Math.random() * 1000 );
+>>>>>>> 7075861e7f192b120552d5a2fe39ceb64c298f4b
 function submitData(userName,userEmail){
 const formData = {
   name: userName,
@@ -22,6 +26,7 @@ return fetch("http://localhost:3000/users", configObj)
     return response.json();
   })
   .then(function(json) {
+<<<<<<< HEAD
         body.innerHTML = json.id;
             console.log(json);
         })
@@ -29,5 +34,23 @@ return fetch("http://localhost:3000/users", configObj)
                  body.innerHTML = error.message;
                  console.log(error.message);
              });
+=======
+    if(formData)
+    {json.id=rando;
+body.innerText=json.id;
+    json+=formData;}
+  //  for(let i=0;i<json.length;i++)
+  //  {body.innerText=json.id;
+
+  })
+   .catch(function(error) {
+    alert("Bad things! Pay Attention!");
+     error={
+      message:message
+    }
+    body.innerHTML=`<p>${error.message}</p>`;
+  //  console.log(error.message);
+  });
+>>>>>>> 7075861e7f192b120552d5a2fe39ceb64c298f4b
 }
 submitData();
